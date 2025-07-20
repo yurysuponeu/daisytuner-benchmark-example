@@ -18,3 +18,4 @@ steps:
     matmul:
       command: python3 matmul.py
       measurements: 1
+      profiler: py-spy
