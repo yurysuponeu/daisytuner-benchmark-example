@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+parameters:
+  timeout: 30
+  partitions:
+    - bellis5
+
+steps:
+  build: |
+    sudo apt-get install -y python3-numpy
+
+  run:
+    matmul:
+      command: python3 matmul.py
+      measurements: 1
